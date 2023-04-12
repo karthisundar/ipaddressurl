@@ -178,7 +178,7 @@ app.post('/signup',function(req,res){
     const mobilenumber = formdata[0].mobilenumber
 
     
-    db.query(`insert into usermaster (firstname,lastname,email,password,mobilenumber,user_typeid) values(?,?,?,?,?,?)`,[first_name,lastname,email,password,mobilenumber,usertype],(err,result)=>{
+    db.query(`insert into usermaster (firstname,lastname,email,password,mobilenumber,usertypeid) values(?,?,?,?,?,?)`,[first_name,lastname,email,password,mobilenumber,usertype],(err,result)=>{
         if(err){
             console.log("hhhh",err)
         
