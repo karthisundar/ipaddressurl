@@ -14,14 +14,14 @@ const db = mysql.createConnection({
     database:"Kayal_akka"
 })
 
-app.post(`/login`,function(req,res){
+app.post(`/login`,(req,res)=>{
     
     // db.query(`SELECT * FROM user_login ul where  ul.Email  = 'admin@gmail.com'  and ul.password_field  = 'Karthi@123'  and ul.user_type = 1`).then(result=>console.log("err",result))
 
     const {Email,password}= req.body   
     console.log('email',Email)                                                                                                                                                                                                                                                     
 
-    db.query(`SELECT * FROM usermaster ul where  ul.email  = '${Email}'  and ul.password  = '${password}'`,(err,result)=>{
+    db.query(`SELECT * FROM usermaster ul where  ul.email_address  = '${Email}'  and ul.password_new  = '${password}'`,(err,result)=>{
         if(err){
             console.log("hhhh",err)
         
@@ -42,7 +42,7 @@ app.post(`/checkemail`,(req,res)=>{
 
     console.log('email',email_id)
 
-    db.query(`select ul.email from usermaster ul where ul.email ='${email_id}' `,(err,result)=>{
+    db.query(`select ul.email_address from usermaster ul where ul.email_address ='${email_id}' `,(err,result)=>{
         if(err){
             // res.send(500).send({message:'error',error:err})
             res.status(500).send({message:"error",errors:err})
@@ -164,7 +164,7 @@ app.post(`/product`,function(req,res){
 //     })
 // })
 
-app.post('/signup',function(req,res){
+app.post('/signup',(req,res)=>{
 
 
     const {formdata} = req.body
@@ -177,7 +177,7 @@ app.post('/signup',function(req,res){
     const mobilenumber = formdata[0].mobilenumber
 
     
-    db.query(`insert into usermaster (firstname,lastname,email,password,mobilenumber,user_typeid) values(?,?,?,?,?,?)`,[first_name,lastname,email,password,mobilenumber,usertype],(err,result)=>{
+    db.query(`insert into usermaster (first_name,last_name,email_address,password_new,user_typeid,mobilenumber) values(?,?,?,?,?,?)`,[first_name,lastname,email,password,usertype,mobilenumber],(err,result)=>{
         if(err){
             console.log("hhhh",err)
         
