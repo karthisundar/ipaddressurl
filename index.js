@@ -109,7 +109,7 @@ app.post('/updateproduct',function(req,res){
     console.log('searcchhchchc',search_product)
 })
 
-app.post(`/product`,(req,res)=>{
+app.post(`/product`,function(req,res){
 
     // const Email=req.body.email;
 
@@ -165,7 +165,7 @@ app.post(`/product`,(req,res)=>{
 //     })
 // })
 
-app.post('/signup',(req,res)=>{
+app.post('/signup',function(req,res){
 
 
     const {formdata} = req.body
@@ -202,7 +202,7 @@ app.post('/signup',(req,res)=>{
 
 ///////search product
 
-app.post('/searchproduct',(req,res)=>{
+app.post('/searchproduct',function(req,res){
     console.log('wwwww',req.body)
 
     const {product_code} = req.body
@@ -224,7 +224,7 @@ app.post('/searchproduct',(req,res)=>{
     
 })
 
-app.post('/qrsearch',(req,res)=>{
+app.post('/qrsearch',function(req,res){
     console.log('wwwww',req.body)
 
     const {product_code} = req.body
@@ -247,7 +247,7 @@ app.post('/qrsearch',(req,res)=>{
     
 })
 
-app.post('/updateproduct_search',(req,res)=>{
+app.post('/updateproduct_search',function(req,res){
     const {formdata} = req.body
     console.log('formsss',formdata)
 
@@ -269,7 +269,7 @@ app.post('/updateproduct_search',(req,res)=>{
     })
 })
 
-app.post('/savebill',(req,res)=>{
+app.post('/savebill',function(req,res){
     
 })
 
