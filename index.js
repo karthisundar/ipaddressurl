@@ -8,11 +8,10 @@ app.use(express.json());
 
 
 const db = mysql.createConnection({
-    user:"sql12612329",
-    host:"sql12.freemysqlhosting.net",
-    password:"uLngyxDaa1",
-    database:"sql12612329",
-    port:3306
+    user:"root",
+    host:"localhost",
+    password:"Karthi@123",
+    database:"Kayal_akka"
 })
 
 app.post(`/login`,function(req,res){
