@@ -15,7 +15,7 @@ const db = mysql.createConnection({
     port:3306
 })
 
-app.post(`/login`,(req,res)=>{
+app.post(`/login`,function(req,res){
     
     // db.query(`SELECT * FROM user_login ul where  ul.Email  = 'admin@gmail.com'  and ul.password_field  = 'Karthi@123'  and ul.user_type = 1`).then(result=>console.log("err",result))
 
