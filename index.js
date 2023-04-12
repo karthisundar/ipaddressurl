@@ -22,7 +22,7 @@ app.post(`/login`,(req,res)=>{
     const {Email,password}= req.body   
     console.log('email',Email)                                                                                                                                                                                                                                                     
 
-    db.query(`SELECT * FROM usermaster ul where  ul.email_address  = '${Email}'  and ul.password_new  = '${password}'`,(err,result)=>{
+    db.query(`SELECT * FROM usermaster ul where  ul.email  = '${Email}'  and ul.password  = '${password}'`,(err,result)=>{
         if(err){
             console.log("hhhh",err)
         
