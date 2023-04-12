@@ -131,7 +131,7 @@ app.post(`/product`,function(req,res){
 
     // const query_data = `insert into product (product_code,product_title,amount,quantity) values(?,?,?,?)`,[product_code_1,product,amount,quantity],(err,result)
 
-    db.query(`insert into product (product_code,product_title,amount,quantity,count_new,product_type) values(?,?,?,?,?,?)`,[product_code_1,product,amount,qty,count,product_type],(err,result)=>{
+    db.query(`insert into product (product_code,product_title,amount,quantity,type) values(?,?,?,?,?)`,[product_code_1,product,amount,qty,product_type],(err,result)=>{
         if(err){
             console.log("hhhh",err)
         
