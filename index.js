@@ -182,10 +182,11 @@ app.post('/checkproduct/:product_code',(req,res)=>{
     })
 })
 
-app.post('searchbill/:searchbill',(req,res)=>{
+app.post('/searchbill/:searchbill',(req,res)=>{
 
 
     const {searchbill} = req.params
+    // console.log('ddddd',searchbill)
 
     db.query(`select * from userbill u where u.bill_no=${searchbill}`,(err,result)=>{
         if(err){
